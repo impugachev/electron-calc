@@ -10,8 +10,6 @@ function evaluateExpression(expression, result){
     return eval(expression.text() + result.text()).toString()
 }
 
-let clearOnNext = false
-
 function clear(){
     $("#result").text("0")
     $("#expression").text("")

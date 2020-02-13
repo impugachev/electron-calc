@@ -1,7 +1,12 @@
-button, #last {
-    width: 1cm;
-    height: 1cm;
-    display: inline-block;
+body{
+    margin: 0%;
+}
+
+button{
+    width: 25%;
+    height: 25vw;
+    display: block;
+    float: left;
 }
 
 #result, #expression {
