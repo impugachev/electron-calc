@@ -1,9 +1,5 @@
-function curry(f) {
-    return function (a) {
-        return function (b) {
-            return f(a, b);
-        };
-    };
+function makeHandler(specificHandler){
+    return _.partial(handler, specificHandler, _)
 }
 
 function appendText(node, text){
@@ -72,15 +68,13 @@ function signHandler(button, result){
     }
 }
 
-let curriedHandler = curry(handler)
-
 $(".number").each(function () {
-    $(this).click(curriedHandler(numberHandler))
+    $(this).click(makeHandler(numberHandler))
 })
 $(".action").each(function () {
-    $(this).click(curriedHandler(actionHandler))
+    $(this).click(makeHandler(actionHandler))
 })
-$("#dot").click(curriedHandler(dotHandler))
-$("#equal").click(curriedHandler(equalHandler))
-$("#clear").click(curriedHandler(clearHandle))
-$("#sign").click(curriedHandler(signHandler))
+$("#dot").click(makeHandler(dotHandler))
+$("#equal").click(makeHandler(equalHandler))
+$("#clear").click(makeHandler(clearHandle))
+$("#sign").click(makeHandler(signHandler))
