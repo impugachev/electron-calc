@@ -1,12 +1,16 @@
-body{
+body {
     margin: 0%;
 }
 
-button{
+button {
     width: 25%;
     height: 25vw;
     display: block;
     float: left;
+}
+
+#equal {
+    width: 50%;
 }
 
 #result, #expression {
