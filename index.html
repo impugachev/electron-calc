@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'">
   <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
   <link rel="stylesheet" type="text/css" href="calc.css" />
   <title>Калькулятор</title>
@@ -11,37 +11,37 @@
 
 <body>
 
-  <h1 id="expression"></h1>
+  <p id="expression"></p>
   <h1 id="result">0</h1>
 
   <button id="clear">C</button>
   <button id="sign">±</button>
   <div id="last"><button>NA</button></div>
-  <button>/</button>
+  <button class="action">/</button>
   <br>
 
   <button class="number">7</button>
   <button class="number">8</button>
   <button class="number">9</button>
-  <button>x</button>
+  <button class="action">*</button>
   <br>
 
   <button class="number">4</button>
   <button class="number">5</button>
   <button class="number">6</button>
-  <button>-</button>
+  <button class="action">-</button>
   <br>
 
   <button class="number">1</button>
   <button class="number">2</button>
   <button class="number">3</button>
-  <button>+</button>
+  <button class="action">+</button>
   <br>
 
   <button>A</button>
-  <button>0</button>
-  <button>.</button>
-  <button>=</button>
+  <button class="number">0</button>
+  <button id="dot">.</button>
+  <button id="equal">=</button>
   <!-- You can also require other files to run in this process -->
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="renderer.js"></script>
