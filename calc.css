@@ -1,5 +1,9 @@
-button, #last{
+button, #last {
     width: 1cm;
     height: 1cm;
     display: inline-block;
+}
+
+#result, #expression {
+    text-align: right;
 }
