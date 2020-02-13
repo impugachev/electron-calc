@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Sriracha";
+    src: url("./fonts/Sriracha-Regular.ttf") format("opentype")
+}
+
+@font-face {
+    font-family: "Open-Sans";
+    src: url("./fonts/OpenSans-Regular.ttf") format("opentype")
+}
+
 body {
     margin: 0%;
 }
@@ -5,14 +15,46 @@ body {
 button {
     width: 25%;
     height: 25vw;
+    max-width: 65px;
+    max-height: 65px;
     display: block;
     float: left;
+    font-size: 150%;
+    font-family: 'Sriracha';
+    
+    transition: 0.5s;
+    background-color: rgb(252, 98, 42);
+    color: white;
+    border-radius: 5mm;
+    outline: none;
+}
+
+.number, #dot {
+    background-color: seashell;
+    color: black;
+}
+
+button:hover, #dot:hover{
+    background-color: deepskyblue;
 }
 
 #equal {
     width: 50%;
+    max-width: 130px;
 }
 
 #result, #expression {
     text-align: right;
+    display: list-item;
+    padding: 1mm;
+    font-family: 'Open-Sans';
+}
+
+#result {
+    font-size: 20pt;
+}
+
+#display {
+    background-color: lightblue;
+    border-radius: 5mm;
 }

@@ -18,7 +18,7 @@ function clear(){
 function handler(postFunc, event) {
     let button = $(event.target)
     let result = $("#result")
-    $("#last").children().first().replaceWith(button.clone(true))
+    $("#last").children().first().replaceWith(button.clone(true).css({"width": "25%", "max-width": "65px"}))
     postFunc(button, result)
 }
 
