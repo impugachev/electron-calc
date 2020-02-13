@@ -1,0 +1,5 @@
+button, #last{
+    width: 1cm;
+    height: 1cm;
+    display: inline-block;
+}
