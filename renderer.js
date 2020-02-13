@@ -39,7 +39,8 @@ function dotHandler(button, result) {
 function actionHandler(button, result){
     let expr = $("#expression")
     if (expr.text() == ""){
-        expr.text(result.text() + button.text())
+        let resultText = result.text().slice(-1) == "." ? result.text().slice(0, -1) : result.text()
+        expr.text(resultText + " " + button.text())
     } else {
         expr.text(evaluateExpression(expr, result) + button.text())
     }
