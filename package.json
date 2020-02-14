@@ -4,7 +4,9 @@
   "description": "Mini calculator",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/impugachev/electron-calc",
   "keywords": [
@@ -13,9 +15,17 @@
   ],
   "author": "impugachev",
   "devDependencies": {
-    "electron": "^8.0.0",
+    "electron": "^8.0.0"
+  },
+  "dependencies": {
     "about-window": "^1.13.2",
     "jquery": "^3.4.1",
     "lodash": "^4.17.10"
+  },
+  "build": {
+    "appId": "min-calc",
+    "mac": {
+      "category": "Calculator"
+    }
   }
 }
