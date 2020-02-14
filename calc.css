@@ -15,8 +15,6 @@ body {
 button {
     width: 25%;
     height: 25vw;
-    max-width: 65px;
-    max-height: 65px;
     display: block;
     float: left;
     font-size: 150%;
@@ -40,7 +38,6 @@ button:hover, #dot:hover{
 
 #equal {
     width: 50%;
-    max-width: 130px;
 }
 
 #result, #expression {
@@ -54,7 +51,3 @@ button:hover, #dot:hover{
     font-size: 20pt;
 }
 
-#display {
-    background-color: lightblue;
-    border-radius: 5mm;
-}
