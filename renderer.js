@@ -86,8 +86,10 @@ $('.number').each(function () {
 $('.action').each(function () {
     $(this).on('click', makeHandler(actionHandler))
 })
+
 $('#dot').on('click', afterEqual)
 $('#dot').on('click', makeHandler(dotHandler))
+
 $('#equal').on('click', makeHandler(equalHandler))
 $('#clear').on('click', makeHandler(clearHandle))
 $('#sign').on('click', makeHandler(signHandler))
