@@ -4,8 +4,8 @@ const join = require('path').join;
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 250,
-    height: 430,
+    width: 300,
+    height: 525,
     resizable: false
   })
   mainWindow.loadFile('index.html')

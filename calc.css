@@ -50,11 +50,13 @@ button:hover, #dot:hover{
 #result, #expression {
     text-align: right;
     display: list-item;
+    height: 52px;
     padding: 1mm;
     font-family: 'Open-Sans';
 }
 
 #result {
     font-size: 20pt;
+    height: fit-content;
 }
 

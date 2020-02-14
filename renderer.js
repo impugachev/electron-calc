@@ -20,8 +20,9 @@ function handler(postFunc, event) {
     let result = $('#result')
     $('#last').children().first().replaceWith(button.clone(true).css({'width': '25%'}))
     postFunc(button, result)
-    if (button.text() != '±' && result.text().length > 14){
-        result.text(result.text().substring(0, 14))
+    const textLimit = 18
+    if (button.text() != '±' && result.text().length > textLimit){
+        result.text(result.text().substring(0, textLimit))
         alert('Screen overflow!')
     }
 }
