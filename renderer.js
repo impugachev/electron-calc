@@ -11,14 +11,14 @@ function evaluateExpression(expression, result){
 }
 
 function clear(){
-    $("#result").text("0")
-    $("#expression").text("")
+    $('#result').text('0')
+    $('#expression').text('')
 }
 
 function handler(postFunc, event) {
     let button = $(event.target)
-    let result = $("#result")
-    $("#last").children().first().replaceWith(button.clone(true).css({"width": "25%", "max-width": "65px"}))
+    let result = $('#result')
+    $('#last').children().first().replaceWith(button.clone(true).css({'width': '25%'}))
     postFunc(button, result)
 }
 
@@ -31,26 +31,26 @@ function numberHandler(button, result) {
 }
 
 function dotHandler(button, result) {
-    if (!result.text().includes(".") && result.text().slice(-1) != ".") {
-        appendText(result, ".")
+    if (!result.text().includes('.') && result.text().slice(-1) != '.') {
+        appendText(result, '.')
     }
 }
 
 function actionHandler(button, result){
-    let expr = $("#expression")
-    if (expr.text() == ""){
-        let resultText = result.text().slice(-1) == "." ? result.text().slice(0, -1) : result.text()
-        expr.text(resultText + " " + button.text())
+    let expr = $('#expression')
+    if (expr.text() == ''){
+        let resultText = result.text().slice(-1) == '.' ? result.text().slice(0, -1) : result.text()
+        expr.text(resultText + ' ' + button.text())
     } else {
         expr.text(evaluateExpression(expr, result) + button.text())
     }
-    result.text("0")
+    result.text('0')
 }
 
 function equalHandler(button, result){
-    let expr = $("#expression")
+    let expr = $('#expression')
     result.text(evaluateExpression(expr, result))
-    expr.text("")
+    expr.text('')
 }
 
 function clearHandle(button, result){
@@ -58,22 +58,22 @@ function clearHandle(button, result){
 }
 
 function signHandler(button, result){
-    if (result.text().charAt(0) == "0")
+    if (result.text().charAt(0) == '0')
         return
-    if (result.text().charAt(0) == "-"){
+    if (result.text().charAt(0) == '-'){
         result.text(result.text().substr(1))
     } else {
-        result.text("-" + result.text())
+        result.text('-' + result.text())
     }
 }
 
-$(".number").each(function () {
+$('.number').each(function () {
     $(this).click(makeHandler(numberHandler))
 })
-$(".action").each(function () {
+$('.action').each(function () {
     $(this).click(makeHandler(actionHandler))
 })
-$("#dot").click(makeHandler(dotHandler))
-$("#equal").click(makeHandler(equalHandler))
-$("#clear").click(makeHandler(clearHandle))
-$("#sign").click(makeHandler(signHandler))
+$('#dot').click(makeHandler(dotHandler))
+$('#equal').click(makeHandler(equalHandler))
+$('#clear').click(makeHandler(clearHandle))
+$('#sign').click(makeHandler(signHandler))
