@@ -23,7 +23,7 @@ function handler(postFunc, event) {
 }
 
 function numberHandler(button, result) {
-    if (result.text() == 0) {
+    if (result.text() == '0') {
         result.text(button.text())
     } else {
         appendText(result, button.text())
@@ -45,16 +45,19 @@ function actionHandler(button, result){
         expr.text(evaluateExpression(expr, result) + button.text())
     }
     result.text('0')
+    clearOnNext = false
 }
 
 function equalHandler(button, result){
     let expr = $('#expression')
     result.text(evaluateExpression(expr, result))
     expr.text('')
+    clearOnNext = true
 }
 
 function clearHandle(button, result){
     clear()
+    clearOnNext = false
 }
 
 function signHandler(button, result){
@@ -67,13 +70,23 @@ function signHandler(button, result){
     }
 }
 
+function afterEqual(){
+    if (clearOnNext){
+        clearHandle(null, null)
+    }
+}
+
+let clearOnNext = false
+
 $('.number').each(function () {
-    $(this).click(makeHandler(numberHandler))
+    $(this).on('click', afterEqual)
+    $(this).on('click', makeHandler(numberHandler))
 })
 $('.action').each(function () {
-    $(this).click(makeHandler(actionHandler))
+    $(this).on('click', makeHandler(actionHandler))
 })
-$('#dot').click(makeHandler(dotHandler))
-$('#equal').click(makeHandler(equalHandler))
-$('#clear').click(makeHandler(clearHandle))
-$('#sign').click(makeHandler(signHandler))
+$('#dot').on('click', afterEqual)
+$('#dot').on('click', makeHandler(dotHandler))
+$('#equal').on('click', makeHandler(equalHandler))
+$('#clear').on('click', makeHandler(clearHandle))
+$('#sign').on('click', makeHandler(signHandler))
