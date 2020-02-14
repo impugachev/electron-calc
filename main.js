@@ -1,6 +1,8 @@
-const {app, BrowserWindow, Menu} = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
+const openAboutWindow = require('about-window').default;
+const join = require('path').join;
 
-function createWindow () {
+function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 250,
     height: 430,
@@ -11,14 +13,24 @@ function createWindow () {
 
 let menu = Menu.buildFromTemplate([
   {
-      label: 'Menu',
-      submenu: [
-          {label:'About', role: 'about'},
-          {label:'Exit', role: 'quit'}
-      ]
+    label: 'Menu',
+    submenu: [
+      {
+        label: 'About', role: 'about', click: () =>
+          openAboutWindow({
+            icon_path: join(__dirname, 'fujiwara.jpg'),
+            copyright: 'Copyright (c) 2020 Igor Pugachev',
+            show_close_button: 'Close',
+            package_json_dir: __dirname,
+            adjust_window_size: true
+          })
+      },
+      { label: 'Exit', role: 'quit' }
+    ]
   }
 ])
 Menu.setApplicationMenu(menu)
+
 
 app.on('ready', createWindow)
 app.on('window-all-closed', function () {
