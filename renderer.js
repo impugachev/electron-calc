@@ -20,6 +20,10 @@ function handler(postFunc, event) {
     let result = $('#result')
     $('#last').children().first().replaceWith(button.clone(true).css({'width': '25%'}))
     postFunc(button, result)
+    if (button.text() != '±' && result.text().length > 14){
+        result.text(result.text().substring(0, 14))
+        alert('Screen overflow!')
+    }
 }
 
 function numberHandler(button, result) {
