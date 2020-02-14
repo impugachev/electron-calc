@@ -38,11 +38,11 @@ function dotHandler(button, result) {
 
 function actionHandler(button, result){
     let expr = $('#expression')
-    if (expr.text() == ''){
+    if (expr.text() == '' || clearOnNext){
         let resultText = result.text().slice(-1) == '.' ? result.text().slice(0, -1) : result.text()
         expr.text(resultText + ' ' + button.text())
     } else {
-        expr.text(evaluateExpression(expr, result) + button.text())
+        expr.text(evaluateExpression(expr, result) + ' ' + button.text())
     }
     result.text('0')
     clearOnNext = false
@@ -50,8 +50,9 @@ function actionHandler(button, result){
 
 function equalHandler(button, result){
     let expr = $('#expression')
+    let exprText = expr.text() + ' ' + result.text() + ' ='
     result.text(evaluateExpression(expr, result))
-    expr.text('')
+    expr.text(exprText)
     clearOnNext = true
 }
 
