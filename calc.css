@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Sriracha";
-    src: url("./fonts/Sriracha-Regular.ttf") format("opentype")
+    src: url("./assets/fonts/Sriracha-Regular.ttf") format("opentype")
 }
 
 @font-face {
     font-family: "Open-Sans";
-    src: url("./fonts/OpenSans-Regular.ttf") format("opentype")
+    src: url("./assets/fonts/OpenSans-Regular.ttf") format("opentype")
 }
 
 *, *::after, *::before {

@@ -18,7 +18,7 @@ let menu = Menu.buildFromTemplate([
       {
         label: 'About', role: 'about', click: () =>
           openAboutWindow({
-            icon_path: join(__dirname, 'fujiwara.jpg'),
+            icon_path: join(__dirname, 'assets', 'img', 'fujiwara.jpg'),
             copyright: 'Copyright (c) 2020 Igor Pugachev',
             show_close_button: 'Close',
             package_json_dir: __dirname,
