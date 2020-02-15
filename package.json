@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "release": "electron-builder --publish onTag"
+    "release": "electron-builder --publish always"
   },
   "repository": "https://github.com/impugachev/electron-calc",
   "keywords": [
