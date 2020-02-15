@@ -64,7 +64,7 @@ function clearHandle(button, result){
 }
 
 function signHandler(button, result){
-    if (result.text().charAt(0) == '0')
+    if (result.text() == '0' || result.text() == '0.')
         return
     if (result.text().charAt(0) == '-'){
         result.text(result.text().substr(1))
