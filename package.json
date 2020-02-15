@@ -34,10 +34,10 @@
             "ia32"
           ]
         }
-      ]
+      ],
+      "publish": ["github"]
     },
     "mac": {
-      "category": "Calculator",
       "target": [
         {
           "target": "dmg",
@@ -46,10 +46,10 @@
             "ia32"
           ]
         }
-      ]
+      ],
+      "publish": ["github"]
     },
     "linux": {
-      "category": "Calculator",
       "target": [
         {
           "target": "AppImage",
@@ -58,7 +58,8 @@
             "ia32"
           ]
         }
-      ]
+      ],
+      "publish": ["github"]
     }
   }
 }
