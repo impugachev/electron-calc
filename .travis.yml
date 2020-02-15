@@ -6,6 +6,11 @@ os:
   - windows
   - osx
 env:
-  - GH_TOKEN=58efc1c9d2d7e1e643c02bbf916731b2e03beb3e
+  - GH_TOKEN=b56fbc4a2a14ab92905e1fffec0889d4e4e0e68b
+before_script:
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      sudo snap install snapcraft --classic;
+    fi
 script:
   - npm run release
