@@ -5,5 +5,7 @@ os:
   - linux
   - windows
   - osx
+env:
+  - GH_TOKEN=58efc1c9d2d7e1e643c02bbf916731b2e03beb3e
 script:
-  - npm run dist
+  - npm run release
