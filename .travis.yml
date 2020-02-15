@@ -5,9 +5,5 @@ os:
   - linux
   - windows
   - osx
-install:
-  - |
-    npm ci;
-    npm install electron-builder -g
 script:
   - npm run dist
