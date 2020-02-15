@@ -10,6 +10,8 @@ env:
 before_script:
   - |
     if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      sudo apt update;
+      sudo apt install snapd;
       sudo snap install snapcraft --classic;
     fi
 script:
