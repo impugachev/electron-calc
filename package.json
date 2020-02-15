@@ -25,8 +25,40 @@
   },
   "build": {
     "appId": "min-calc",
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
     "mac": {
-      "category": "Calculator"
+      "category": "Calculator",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "category": "Calculator",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
     }
   }
 }
