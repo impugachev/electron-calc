@@ -9,10 +9,10 @@
 }
 
 *, *::after, *::before {
-	-webkit-user-select: none;
-	-webkit-user-drag: none;
-	-webkit-app-region: no-drag;
-	cursor: default;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+    cursor: default;
 }
 
 body {
@@ -26,7 +26,6 @@ button {
     float: left;
     font-size: 150%;
     font-family: 'Sriracha';
-    
     transition: 0.5s;
     background-color: rgb(252, 98, 42);
     color: white;
@@ -39,7 +38,7 @@ button {
     color: black;
 }
 
-button:hover, #dot:hover{
+button:hover, #dot:hover {
     background-color: deepskyblue;
 }
 
@@ -62,18 +61,18 @@ button:hover, #dot:hover{
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background-color: #F5F5F5;
-  }
-  
-  #result::-webkit-scrollbar, #flip::-webkit-scrollbar {
+}
+
+#result::-webkit-scrollbar, #flip::-webkit-scrollbar {
     height: 5px;
     background-color: #F5F5F5;
-  }
-  
-  #result::-webkit-scrollbar-thumb, #flip::-webkit-scrollbar-thumb {
+}
+
+#result::-webkit-scrollbar-thumb, #flip::-webkit-scrollbar-thumb {
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: rgb(253, 130, 29);
-  }
+}
 
 #expression, #flip {
     transform: rotateX(180deg);
