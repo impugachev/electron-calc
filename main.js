@@ -5,7 +5,7 @@ const join = require('path').join;
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 300,
-    height: 525,
+    height: 505,
     resizable: false
   })
   mainWindow.loadFile('index.html')

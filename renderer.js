@@ -20,11 +20,8 @@ function handler(postFunc, event) {
     let result = $('#result')
     $('#last').children().first().replaceWith(button.clone(true).css({'width': '25%'}))
     postFunc(button, result)
-    const textLimit = 18
-    if (button.text() != '±' && result.text().length > textLimit){
-        result.text(result.text().substring(0, textLimit))
-        alert('Screen overflow!')
-    }
+    result.scrollLeft(9999999999999) // TRASH!!!!
+    $("#flip").scrollLeft(9999999999999)
 }
 
 function numberHandler(button, result) {
@@ -45,9 +42,9 @@ function actionHandler(button, result){
     let expr = $('#expression')
     if (expr.text() == '' || clearOnNext){
         let resultText = result.text().slice(-1) == '.' ? result.text().slice(0, -1) : result.text()
-        expr.text(resultText + ' ' + button.text())
+        expr.text(resultText + button.text())
     } else {
-        expr.text(evaluateExpression(expr, result) + ' ' + button.text())
+        expr.text(evaluateExpression(expr, result) + button.text())
     }
     result.text('0')
     clearOnNext = false
@@ -55,7 +52,7 @@ function actionHandler(button, result){
 
 function equalHandler(button, result){
     let expr = $('#expression')
-    let exprText = expr.text() + ' ' + result.text() + ' ='
+    let exprText = expr.text() + result.text() + '='
     result.text(evaluateExpression(expr, result))
     expr.text(exprText)
     clearOnNext = true
