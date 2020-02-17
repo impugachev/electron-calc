@@ -1,6 +1,6 @@
 {
   "name": "min-calc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mini calculator",
   "main": "main.js",
   "scripts": {
