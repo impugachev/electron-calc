@@ -7,7 +7,7 @@ function appendText(node, text){
 }
 
 function evaluateExpression(expression, result){
-    return eval(expression.text() + result.text()).toString()
+    return parseFloat(eval(expression.text() + result.text()).toFixed(16))
 }
 
 function clear(){
