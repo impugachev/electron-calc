@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "about-window": "^1.13.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.10"
   },
   "build": {
